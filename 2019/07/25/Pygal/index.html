@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="哪里出错了呢》？？？">
+<meta name="description" content="前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件">
 <meta name="keywords" content="Pygal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pygal基础">
 <meta property="og:url" content="http://yoursite.com/2019/07/25/Pygal/index.html">
 <meta property="og:site_name" content="波波客">
-<meta property="og:description" content="哪里出错了呢》？？？">
+<meta property="og:description" content="前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-26T01:52:05.861Z">
+<meta property="og:updated_time" content="2019-07-29T06:57:58.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pygal基础">
-<meta name="twitter:description" content="哪里出错了呢》？？？">
+<meta name="twitter:description" content="前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件">
 
 
 
@@ -378,9 +378,21 @@
       
 
       
-        <p>哪里出错了呢》？？？</p>
-<a id="more"></a>
-<p>测试测试@</p>
+        <h3 id="前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件"><a href="#前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件" class="headerlink" title="前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件"></a>前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件</h3><a id="more"></a>
+<h3 id="官方文档：http-www-pygal-org"><a href="#官方文档：http-www-pygal-org" class="headerlink" title="官方文档：http://www.pygal.org"></a>官方文档：<a href="http://www.pygal.org" target="_blank" rel="noopener">http://www.pygal.org</a></h3><h3 id="利用Pygal来对掷骰子的结果进行分析"><a href="#利用Pygal来对掷骰子的结果进行分析" class="headerlink" title="利用Pygal来对掷骰子的结果进行分析"></a>利用Pygal来对掷骰子的结果进行分析</h3><p>​    （1）创建Die类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Die</span>:</span></span><br><span class="line">    <span class="string">"""表示一个筛子的类"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num_sides=<span class="number">6</span>)</span>:</span></span><br><span class="line">        <span class="string">"""筛子默认为6面"""</span></span><br><span class="line">        self.num_sides = num_sides</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""返回一个位于1和筛子面数之间的随机值"""</span></span><br><span class="line">        <span class="keyword">return</span> randint(<span class="number">1</span>, self.num_sides)</span><br></pre></td></tr></table></figure>
+<p>​    （2）掷骰子，并对结果进行可视化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个D6</span></span><br><span class="line">die = Die()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 掷几次筛子，并将结果存储在一个列表中</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> roll_num <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">    result = die.roll()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分析结果</span></span><br><span class="line">frequencies = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>, die.num_sides+<span class="number">1</span>):</span><br><span class="line">    frequency = results.count(value)</span><br><span class="line">    frequencies.append(frequency)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化结果</span></span><br><span class="line">hist = pygal.Bar()</span><br><span class="line"></span><br><span class="line">hist.title = <span class="string">"Results of rolling one D6 1000 times"</span></span><br><span class="line">hist.x_labels = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">hist.x_title = <span class="string">"Result"</span></span><br><span class="line">hist.y_title = <span class="string">"Frequency of Result"</span></span><br><span class="line"></span><br><span class="line">hist.add(<span class="string">'D6'</span>, frequencies)</span><br><span class="line">hist.render_to_file(<span class="string">'die_visual.svg'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>​    （3）同时掷两个骰子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建两个D6</span></span><br><span class="line">die1 = Die()</span><br><span class="line">die2 = Die()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 掷几次筛子，并将结果存储在一个列表中</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> roll_num <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">    result = die1.roll() + die2.roll()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分析结果</span></span><br><span class="line">frequencies = []</span><br><span class="line">max_result = die1.num_sides + die2.num_sides</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">2</span>, max_result+<span class="number">1</span>):</span><br><span class="line">    frequency = results.count(value)</span><br><span class="line">    frequencies.append(frequency)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化结果</span></span><br><span class="line">hist = pygal.Bar()</span><br><span class="line"></span><br><span class="line">hist.title = <span class="string">"Results of rolling two D6 1000 times"</span></span><br><span class="line"><span class="comment"># hist.x_labels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</span></span><br><span class="line">hist.x_labels = [x_value <span class="keyword">for</span> x_value <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">13</span>)]</span><br><span class="line"></span><br><span class="line">hist.x_title = <span class="string">"Result"</span></span><br><span class="line">hist.y_title = <span class="string">"Frequency of Result"</span></span><br><span class="line"></span><br><span class="line">hist.add(<span class="string">'D6 + D6'</span>, frequencies)</span><br><span class="line">hist.render_to_file(<span class="string">'dice_visual.svg'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>​    （4）同时掷两个不同的骰子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> die <span class="keyword">import</span> Die</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个D6和一个D10</span></span><br><span class="line">die1 = Die()</span><br><span class="line">die2 = Die(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 掷筛子多次，并将结果存储在一个列表中</span></span><br><span class="line">results = []</span><br><span class="line"><span class="keyword">for</span> roll_num <span class="keyword">in</span> range(<span class="number">50000</span>):</span><br><span class="line">    result = die1.roll() + die2.roll()</span><br><span class="line">    results.append(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分析结果</span></span><br><span class="line">frequencies = []</span><br><span class="line">max_result = die1.num_sides + die2.num_sides</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">2</span>, max_result+<span class="number">1</span>):</span><br><span class="line">    frequency = results.count(value)</span><br><span class="line">    frequencies.append(frequency)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化结果</span></span><br><span class="line">hist = pygal.Bar()</span><br><span class="line"></span><br><span class="line">hist.title = <span class="string">"Results of rolling a D6 and D10 50,000 times"</span></span><br><span class="line">hist.x_labels = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>]</span><br><span class="line">hist.x_title = <span class="string">"Result"</span></span><br><span class="line">hist.y_title = <span class="string">"Frequency of Result"</span></span><br><span class="line"></span><br><span class="line">hist.add(<span class="string">'D6 + D10'</span>, frequencies)</span><br><span class="line">hist.render_to_file(<span class="string">'different_visual.svg'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<h3 id="使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化"><a href="#使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化" class="headerlink" title="使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化"></a>使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化</h3><p>​    （1）Github上星级最高的Python项目</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pygal</span><br><span class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle <span class="keyword">as</span> LCS, LightenStyle <span class="keyword">as</span> LS</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Make an API call, and store the response.</span></span><br><span class="line">url = <span class="string">'https://api.github.com/search/repositories?q=language:python&amp;sort=stars'</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line">print(<span class="string">"Status code:"</span>, r.status_code)  <span class="comment"># 查看请求是否成功，200表示成功</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将API响应存储在一个变量中，方法json会将相应信息转换成一个字典</span></span><br><span class="line">response_dict = r.json()</span><br><span class="line">print(<span class="string">"Total repositories:"</span>, response_dict[<span class="string">'total_count'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Explore information about the repositories.</span></span><br><span class="line">repo_dicts = response_dict[<span class="string">'items'</span>]</span><br><span class="line">print(<span class="string">"Repositories returned:"</span>, len(repo_dicts))</span><br><span class="line"></span><br><span class="line">names, plot_dicts = [], []</span><br><span class="line"><span class="keyword">for</span> repo_dict <span class="keyword">in</span> repo_dicts:</span><br><span class="line">    names.append(repo_dict[<span class="string">'name'</span>])</span><br><span class="line">    plot_dicts.append(repo_dict[<span class="string">'stargazers_count'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化</span></span><br><span class="line">my_style = LS(<span class="string">'#333366'</span>, base_style=LCS)</span><br><span class="line"></span><br><span class="line">my_config = pygal.Config()  <span class="comment"># Pygal类Config实例化</span></span><br><span class="line">my_config.x_label_rotation = <span class="number">45</span>  <span class="comment"># x轴标签旋转45度</span></span><br><span class="line">my_config.show_legend = <span class="literal">False</span>  <span class="comment"># show_legend隐藏图例</span></span><br><span class="line">my_config.title_font_size = <span class="number">24</span>  <span class="comment"># 设置图标标题主标签副标签的字体大小</span></span><br><span class="line">my_config.label_font_size = <span class="number">14</span></span><br><span class="line">my_config.major_label_font_size = <span class="number">18</span></span><br><span class="line">my_config.truncate_label = <span class="number">15</span>  <span class="comment"># 较长的项目名称缩短15字符</span></span><br><span class="line">my_config.show_y_guides = <span class="literal">False</span>  <span class="comment"># 隐藏图表中的水平线</span></span><br><span class="line">my_config.width = <span class="number">1000</span>  <span class="comment"># 自定义图表的宽度</span></span><br><span class="line"></span><br><span class="line">chart = pygal.Bar(my_config, style=my_style)</span><br><span class="line">chart.title = <span class="string">'Most-Starred Python Projects on GitHub'</span></span><br><span class="line">chart.x_labels = names</span><br><span class="line">chart.add(<span class="string">''</span>, plot_dicts)</span><br><span class="line">chart.render_to_file(<span class="string">'python_repos.svg'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
 
       
     </div>
@@ -475,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -493,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -504,7 +525,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -515,7 +536,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -566,6 +587,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件"><span class="nav-number">1.</span> <span class="nav-text">前言：Pygal是Python一个可视化包，可以用来生成可缩放的矢量图形文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官方文档：http-www-pygal-org"><span class="nav-number">2.</span> <span class="nav-text">官方文档：http://www.pygal.org</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用Pygal来对掷骰子的结果进行分析"><span class="nav-number">3.</span> <span class="nav-text">利用Pygal来对掷骰子的结果进行分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化"><span class="nav-number">4.</span> <span class="nav-text">使用Web应用编程接口（API）来自动获取网站信息，并利用Pygal对结果可视化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
