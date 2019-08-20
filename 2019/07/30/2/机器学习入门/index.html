@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,">
+  <meta name="keywords" content="深度学习,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="吴恩达老师，网易云课堂，机器学习笔记 课程地址">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="吴恩达老师，网易云课堂，深度学习笔记 课程地址">
+<meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习入门">
+<meta property="og:title" content="深度学习入门">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/2/机器学习入门/index.html">
 <meta property="og:site_name" content="波波客">
-<meta property="og:description" content="吴恩达老师，网易云课堂，机器学习笔记 课程地址">
+<meta property="og:description" content="吴恩达老师，网易云课堂，深度学习笔记 课程地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T09:03:30.829Z">
+<meta property="og:updated_time" content="2019-08-20T02:39:13.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习入门">
-<meta name="twitter:description" content="吴恩达老师，网易云课堂，机器学习笔记 课程地址">
+<meta name="twitter:title" content="深度学习入门">
+<meta name="twitter:description" content="吴恩达老师，网易云课堂，深度学习笔记 课程地址">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>机器学习入门 | 波波客</title>
+  <title>深度学习入门 | 波波客</title>
   
 
 
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习入门</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习入门</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
 
@@ -367,52 +367,10 @@
       
 
       
-        <p>吴恩达老师，网易云课堂，机器学习笔记</p>
-<p><a href="https://study.163.com/course/courseMain.htm?courseId=1004570029&amp;_trace_c_p_k2_=35187f1e0c6344d8bd2b9397bdb39e0a#/courseDetail?tab=1" target="_blank" rel="noopener">课程地址</a>    </p>
+        <p>吴恩达老师，网易云课堂，深度学习笔记</p>
+<p><a href="https://mooc.study.163.com/learn/2001281002?tid=2001392029" target="_blank" rel="noopener">课程地址</a></p>
 <a id="more"></a>
-<h1 id="机器学习简介"><a href="#机器学习简介" class="headerlink" title="机器学习简介"></a>机器学习简介</h1><ul>
-<li><h2 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h2></li>
-</ul>
-<hr>
-<p>Arthur Samuel ：”Field of study that gives computers the ability to learn without being explicitly programmed”</p>
-<p>（在没有明确设置的情况下，使计算机具有学习能力的研究领域）</p>
-<p>Tom Mitchell ：”A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E”（计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高）</p>
-<p><code>思考1：</code></p>
-<ul>
-<li><h2 id="机器学习算法-Machine-learning-algorithms"><a href="#机器学习算法-Machine-learning-algorithms" class="headerlink" title="机器学习算法(Machine learning algorithms)"></a>机器学习算法(Machine learning algorithms)</h2><blockquote>
-<p><em>监督学习和无监督学习是当下最常用的两种学习算法</em></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h3 id="监督学习-Supervised-learning"><a href="#监督学习-Supervised-learning" class="headerlink" title="监督学习(Supervised learning)"></a>监督学习(Supervised learning)</h3><p>​    在监督学习中，对于数据集中的每个样本，我们想要通过算法预测并得出正确答案。比如出售房子的价格；根据肿瘤的大小、厚度等特征来判断其是否为良性。它可以归为两类问题：    </p>
-<p>​    （1）回归问题(Regression problem)，它是指：我们的目标是预测一个连续值输出(continuous)</p>
-<p>​    （2）分类问题(Classification problem)，它是指：我们的目标是预测一个离散值输出(discrete)</p>
-<p><code>思考2：假设你目前经营一家公司，现在要通过机器学习算法来解决面临的两个问题：</code></p>
-<blockquote>
-<p>问题1：目前有一万件小米手环4NFC版在仓库中，我想预测在明天上午10点至11点的耍猴行动中能卖出多少件。</p>
-<p>问题2：公司拥有许多的米粉用户，你希望编写一个软件来检查每一个用户的账户是否被入侵。</p>
-<p>判断上述两个问题分别是回归还是分类？</p>
-</blockquote>
-<p><code>分析：</code></p>
-<blockquote>
-<p>问题1：回归问题；1万件小米手环可以看成是一个连续的值，即要卖出的商品数量是一个连续的值。</p>
-<p>问题2：分类问题；账户的状态可以用0来表示未入侵，1表示被入侵，通过设置一个算法来预测这两个离散值从而判断出账户是否被入侵。</p>
-</blockquote>
-<h3 id="无监督学习-Unsupervised-learning"><a href="#无监督学习-Unsupervised-learning" class="headerlink" title="无监督学习(Unsupervised learning)"></a>无监督学习(Unsupervised learning)</h3><p>​    在无监督学习中，对于一个数据集，我们提前并不了解其内部的数据结构，也不清楚想要的结果是什么样的，但是我们可以通过基于数据中变量之间的关系对数据进行聚类来推导出这种结构。在无监督学习中，并没有像监督学习那样会得到基于预测结果的反馈。 </p>
-<p>​    （1）聚类问题：按照一些公共的特性将数据分成不同的类。比如：<a href="https://news.google.com" target="_blank" rel="noopener">谷歌新闻</a>便是一个聚类的典型应用，它将网上许多同一话题的新闻整理到同一个栏目下，方便人们阅览。</p>
-<p><code>思考3：以下哪些问题应用了无监督学习算法？</code></p>
-<blockquote>
-<p>A. 对于一组数据：已经标记过的垃圾邮件和非垃圾邮件，学习进行垃圾邮件分类</p>
-<p>B. 对于一组数据：一组从互联网上下载的文章，将其按照内容的不同聚合在一起</p>
-<p>C. 给定一组客户的数据，自动划分出市场类型并且将用户分类到不同的市场类型中</p>
-<p>D. 给定一组病人的数据，其中有些患有糖尿病，有些没有，辨别出患有糖尿病的人</p>
-</blockquote>
-<p><code>分析:</code></p>
-<blockquote>
-<p>A，D为监督学习，B，C为无监督学习</p>
-</blockquote>
-<h3 id="强化学习-Reinforcement-learning"><a href="#强化学习-Reinforcement-learning" class="headerlink" title="强化学习(Reinforcement learning)"></a>强化学习(Reinforcement learning)</h3><h3 id="推荐系统-Recommender-systems"><a href="#推荐系统-Recommender-systems" class="headerlink" title="推荐系统(Recommender systems)"></a>推荐系统(Recommender systems)</h3><h1 id="单变量线性回归"><a href="#单变量线性回归" class="headerlink" title="单变量线性回归"></a>单变量线性回归</h1><h1 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h1><h1 id="Logistic回归"><a href="#Logistic回归" class="headerlink" title="Logistic回归"></a>Logistic回归</h1><h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1>
+
       
     </div>
     
@@ -429,7 +387,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
           
         </div>
       
@@ -506,17 +464,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -533,7 +482,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +493,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -555,7 +504,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -606,22 +555,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习简介"><span class="nav-number">1.</span> <span class="nav-text">机器学习简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是机器学习？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是机器学习？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习算法-Machine-learning-algorithms"><span class="nav-number">1.2.</span> <span class="nav-text">机器学习算法(Machine learning algorithms)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监督学习-Supervised-learning"><span class="nav-number">1.2.1.</span> <span class="nav-text">监督学习(Supervised learning)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无监督学习-Unsupervised-learning"><span class="nav-number">1.2.2.</span> <span class="nav-text">无监督学习(Unsupervised learning)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强化学习-Reinforcement-learning"><span class="nav-number">1.2.3.</span> <span class="nav-text">强化学习(Reinforcement learning)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐系统-Recommender-systems"><span class="nav-number">1.2.4.</span> <span class="nav-text">推荐系统(Recommender systems)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单变量线性回归"><span class="nav-number">2.</span> <span class="nav-text">单变量线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">3.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic回归"><span class="nav-number">4.</span> <span class="nav-text">Logistic回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化"><span class="nav-number">5.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神经网络"><span class="nav-number">6.</span> <span class="nav-text">神经网络</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

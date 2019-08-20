@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CRF,">
+  <meta name="keywords" content="数据分析,">
 
 
 
@@ -79,23 +79,18 @@
 
 
 
-<meta name="description" content="8月14日学习笔记">
-<meta name="keywords" content="CRF">
+<meta name="description" content="少年心事当拿云">
+<meta name="keywords" content="数据分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电信学习记录8月14日">
-<meta property="og:url" content="http://yoursite.com/2019/08/14/电信学习记录/8月14日/index.html">
+<meta property="og:title" content="数据分析简介">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/2/数据分析入门/index.html">
 <meta property="og:site_name" content="波波客">
-<meta property="og:description" content="8月14日学习笔记">
+<meta property="og:description" content="少年心事当拿云">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:/Users/13721/AppData/Roaming/Typora/typora-user-images/1565832568185.png">
-<meta property="og:image" content="c:/Users/13721/AppData/Roaming/Typora/typora-user-images/1565921405306.png">
-<meta property="og:image" content="c:/Users/13721/AppData/Roaming/Typora/typora-user-images/1565920004289.png">
-<meta property="og:image" content="c:/Users/13721/AppData/Roaming/Typora/typora-user-images/1565937074495.png">
-<meta property="og:updated_time" content="2019-08-19T09:56:33.558Z">
+<meta property="og:updated_time" content="2019-07-26T02:03:38.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电信学习记录8月14日">
-<meta name="twitter:description" content="8月14日学习笔记">
-<meta name="twitter:image" content="c:/Users/13721/AppData/Roaming/Typora/typora-user-images/1565832568185.png">
+<meta name="twitter:title" content="数据分析简介">
+<meta name="twitter:description" content="少年心事当拿云">
 
 
 
@@ -135,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/14/电信学习记录/8月14日/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/20/2/数据分析入门/">
 
 
 
 
 
-  <title>电信学习记录8月14日 | 波波客</title>
+  <title>数据分析简介 | 波波客</title>
   
 
 
@@ -278,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/电信学习记录/8月14日/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/2/数据分析入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄伟波">
@@ -295,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">电信学习记录8月14日</h1>
+          <h1 class="post-title" itemprop="name headline">数据分析简介</h1>
         
 
         <div class="post-meta">
@@ -307,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T00:00:00+08:00">
-                2019-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T10:39:30+08:00">
+                2019-08-20
               </time>
             
 
@@ -330,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CRF/" itemprop="url" rel="index">
-                    <span itemprop="name">CRF</span>
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
                   </a>
                 </span>
 
@@ -372,81 +367,7 @@
       
 
       
-        <p><em>8月14日学习笔记</em></p>
-<a id="more"></a>
-<h2 id="8-14学习记录"><a href="#8-14学习记录" class="headerlink" title="8/14学习记录"></a>8/14学习记录</h2><h1 id="CRF学习"><a href="#CRF学习" class="headerlink" title="CRF学习"></a>CRF学习</h1><ol>
-<li>概念：（Conditional Random Field）条件随机场模型是一种判别式模型，它在观测序列的基础上对目标序列进行建模，重点解决序列化标注问题。当前流行的实现工具：CRF++。</li>
-<li>应用场景：句法分析，序列标注，数据分割 ，组块分析等自然语言处理任务。在中文分词，中文任命识别，歧义消除等领域表现良好。</li>
-<li>处理流程：<ul>
-<li>将分词语料的标注符号转化为用于命名实体序列标注的标记。</li>
-<li>确定特征模板，一般采用当前位置的前后n个位置的字及其标记表示，即以当前位置的前后n个位置范围内的子串及其标记作为观察窗口（一般n取2~3）</li>
-<li>得到相应的特征函数</li>
-<li>训练CRF模型的参数λ和u    </li>
-</ul>
-</li>
-<li>CRF++使用方式：分为训练过程和测试过程两步</li>
-</ol>
-<p><img src="C:\Users\13721\AppData\Roaming\Typora\typora-user-images\1565832568185.png" alt="1565832568185"></p>
-<ul>
-<li>数据格式</li>
-</ul>
-<p><img src="C:\Users\13721\AppData\Roaming\Typora\typora-user-images\1565921405306.png" alt="1565921336798"></p>
-<p>训练数据格式：第一列是需要标注的字或词，最后一列是输出位标记tag，额外的特征例如词性可以加在中间列，所以训练集或者测试集都至少需要两列</p>
-<ul>
-<li>特征模板</li>
-</ul>
-<p><img src="C:\Users\13721\AppData\Roaming\Typora\typora-user-images\1565920004289.png" alt="1565920004289"></p>
-<ol>
-<li><p>模板类型:</p>
-<p>​    CRF++中的模板构建有两类，一类是Unigram标注，一类是Bigram标注，Unigram是比较常用的特征模板，组成的模板数量也比较多。Bigram模板比较简单，一般是当前词和前面一个词的自动组合生成的Bigram特征集合。    Unigram/Bigram是指输出token的Unigram/Bigrams，而不是特征的。    </p>
-<ul>
-<li>Unigram类型 ：每一行%x[#,#]生成一个CRFs中的点(state)函数：f(s,o),其中s为t时刻的标签（output），o为t时刻的上下文。</li>
-<li>Bigram类型：每一行%x[#,#]生成CRFs中的边(Edge)函数：f(s’,s,o),其中s’为t-1时刻的标签，也就是说，Bigram类型与Unigram类型大致相同，只是还要考虑到t-1时刻的标签，如果直线一个B的话，默认生成f(s’,s).</li>
-</ul>
-</li>
-<li></li>
-</ol>
-<blockquote>
-<p><code>“%x[row, column]” 代表获得当前指向位置向上或向下偏移|row|行，并指向第column列的值。</code></p>
-<p>若当前词为”网”，则每个特征模板对应的字如下：</p>
-<p>U00:%x[-2,0]=====&gt;人</p>
-<p>U01:%x[-1,0]=====&gt;民</p>
-<p>U02:%x[0,0]=====&gt;网</p>
-<p>U03:%x[1,0]=====&gt;1</p>
-<p>U04:%x[2,0]=====&gt;月</p>
-<p>U05:%x[-2,0]/%x[-1,0]/%x[0,0]=====&gt;人/民/网</p>
-<p>U06:%x[-1,0]/%x[0,0]/%x[1,0]=====&gt;民/网/1</p>
-<p>U07:%x[0,0]/%x[1,0]/%x[2,0]=====&gt;网/1/月</p>
-<p>U08:%x[-1,0]/%x[0,0]=====&gt;民/网</p>
-<p>U09:%x[0,0]/%x[1,0]=====&gt;网/1</p>
-</blockquote>
-<p>​    以上述数据和特征模板来说：第一个模板U00:%x[-2,0]，当前词假设为”网”，输出output假设仅有”B、E、M、S”四种，可以产生如下四个特征函数：</p>
-<blockquote>
-<p><code>func1=if(output=B and feature=’U00:人‘ )　return 1 else return 0</code> </p>
-<p><code>func2=if(output=E and feature=’U00:人‘ )　return 1 else return 0</code> </p>
-<p><code>func2=if(output=M and feature=’U00:人‘ )　return 1 else return 0</code> </p>
-<p><code>func2=if(output=S and feature=’U00:人‘ )　return 1 else return 0</code> </p>
-</blockquote>
-<ul>
-<li>​    其中output是指当前词的预测标记，也就是”网”的预测标记，每个模板都会把所有可能的标记都列出一遍，然后通过训练确定每种标记的权重，合理的标记在训练样本中出现的次数越多，对应的权重就高，不合理的标记在训练样本中出现的少，对应的权重就少。</li>
-<li>​    其中feature指的是当前此的-2位置处对应的词或者对应的词的特征，由于在这里没有其他特征所以用字本身做特征，有的数据会有词性，那feature就会是”人”这个字的词性而不是字本身了。简而言之，feature的作用就是确定模板所确定的当前词和临近词。</li>
-</ul>
-<p>​    在利用模板生成特征函数时会把所有可能的特征函数都列出来，由模型通过训练决定每个特征的重要程度。 </p>
-<p>​    假设输出序列的集合大小为L，那么训练数据的每一行都会产生L个特征函数，假设输入序列长度为N，那么一个Unigram将会产生L*N个特征函数。</p>
-<ul>
-<li><p><img src="C:\Users\13721\AppData\Roaming\Typora\typora-user-images\1565937074495.png" alt="1565937074495"></p>
-</li>
-</ul>
-<blockquote>
-<p>特征模板编写思路：将所有的特征都编写进去。</p>
-<p>特征模板编写格式：</p>
-<ul>
-<li>#开头的为注释    </li>
-<li>行与行之间可以有空行</li>
-<li>Unigram的特征前使用字母U，而Bigram的特征前使用字母B。后面的数字用于区分特征，当然这些数字不是一定要连续。</li>
-</ul>
-</blockquote>
-
+        
       
     </div>
     
@@ -463,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CRF/" rel="tag"># CRF</a>
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
           
         </div>
       
@@ -476,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/电信学习记录/8月12日/" rel="next" title="电信学习记录8月12日">
-                <i class="fa fa-chevron-left"></i> 电信学习记录8月12日
+              <a href="/2019/08/20/2/深度学习入门/" rel="next" title="机器学习入门">
+                <i class="fa fa-chevron-left"></i> 机器学习入门
               </a>
             
           </div>
@@ -485,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/19/电信学习记录/8月19日/" rel="prev" title="电信学习记录8月19日">
-                电信学习记录8月19日 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -540,17 +457,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -640,22 +548,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-14学习记录"><span class="nav-number">1.</span> <span class="nav-text">8/14学习记录</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#CRF学习"><span class="nav-number"></span> <span class="nav-text">CRF学习</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
